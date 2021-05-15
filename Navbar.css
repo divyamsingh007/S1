@@ -1,0 +1,141 @@
+.navbar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh;
+  /* background-color: rgb(41, 59, 58); */
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  /* padding: 1.875rem 4.375rem; */
+}
+
+.navbar-container .logo {
+  /* font-family: 'Dancing Script', cursive; */
+  cursor: pointer;
+  /* position: relative; */
+  text-transform: uppercase;
+  font-size: 2.188rem;
+  letter-spacing: 0.2rem;
+  /* left: -7vw; */
+}
+
+.navbar-container .navbtn {
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-container .navbtn ul {
+  position: relative;
+  top: 0.5rem;
+  list-style: none;
+}
+
+.navbar-container .navbtn ul li {
+  display: inline-block;
+  padding: 0 1.25rem;
+  /* transition:   0.3s; */
+}
+
+.navbar-container .navbtn ul li:hover {
+  border-bottom: 0.125rem solid rgb(3, 168, 245);
+}
+
+.navbar-container .navbtn ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.navbar-container .navbtn ul li a:hover {
+  color: rgb(30, 176, 243);
+  /* text-decoration: underline; */
+}
+
+.burger {
+  position: absolute;
+  right: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  /* position: relative; */
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+}
+
+@media screen and (max-width: 1050px) {
+  .navbar-container .navbtn ul li {
+    display: inline-block;
+    flex-direction: column-reverse;
+    padding: 0 0.7rem;
+    /* transition:   0.3s; */
+  }
+
+  .navbar-container .login-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  body {
+    overflow-x: none;
+  }
+
+  .navbar-container .logo{
+      position: absolute;
+      left: 1rem;
+  }
+
+  .navbar-container .navbtn {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 92vh;
+    top: 8vh;
+    background-color: #787878c5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+  }
+
+  .navbar-container .navbtn ul li {
+    opacity: 1;
+    padding-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .navbar-container .navbtn ul li:hover {
+    border-bottom: none;
+  }
+  .burger {
+    display: block;
+  }
+
+  .navbar-container .nav-active {
+    transform: translateX(0%);
+    animation: navlinks 0.3s ease-in-out;
+  }
+
+  @keyframes navlinks {
+      from{
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to{
+        opacity: 1;
+        transform: translateX(0px);
+      }
+  }
+}
